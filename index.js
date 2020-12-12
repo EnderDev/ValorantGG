@@ -8,6 +8,7 @@ const Login = require('./Auth/Login');
 const CreatePeripherals = require('./UserPeripherals/Create');
 const ViewPlayer = require('./View/Player');
 const ejs = require('ejs');
+const dashboard = require('./dashboard');
 
 // Middleware 
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use('/Register', Registration);
 app.use('/Login', Login);
 app.use('/Peripherals/Create', CreatePeripherals);
 app.use('/player', ViewPlayer);
+app.use('/dashboard', dashboard);
 
 // Run the server
 app.listen('3000', () => {
