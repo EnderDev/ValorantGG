@@ -7,11 +7,13 @@ const Registration = require('./Auth/Registration');
 const Login = require('./Auth/Login');
 const CreatePeripherals = require('./UserPeripherals/Create');
 const ViewPlayer = require('./View/Player');
+const ejs = require('ejs');
 
 // Middleware 
 app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
+app.set('view engine', 'ejs');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/ValorantStats')
