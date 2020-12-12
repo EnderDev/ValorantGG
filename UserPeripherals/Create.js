@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Peripherals = require('../Models/Peripherals')
+const jwt_decode = require('jwt-decode');
 
 router.post('/', async(req, res) => {
     const peripherals = new Peripherals({
