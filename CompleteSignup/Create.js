@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Peripherals = require('../Models/Peripherals')
+const Peripherals = require('../Models/Keyboard')
 const jwt_decode = require('jwt-decode');
 const Resolution = require('../Models/Resolution');
 
@@ -24,7 +24,7 @@ router.get('/', async(req, res) => {
     try {
         const savedResolution = await resolution.save();
         const savedPeripherals = await peripherals.save();
-        res.json(savedPeripherals);
+        res.redirect('/settings');
         console.log(savedPeripherals);
         console.log(savedResolution);
     } catch (error) {

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const User = require('../Models/User');
 const { Mongoose } = require('mongoose');
-const Peripherals = require('../Models/Peripherals');
+const Peripherals = require('../Models/Keyboard');
 const Resoltuion = require('../Models/Resolution');
 const Resolution = require('../Models/Resolution');
 
