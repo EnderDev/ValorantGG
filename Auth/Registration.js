@@ -16,7 +16,7 @@ router.post('/', async(req, res) => {
         const savedUser = await user.save();
         const token = jwt.sign({_id: user._id}, 'SECRETTTTTT');
         res.cookie('session', token);
-        res.redirect('/Peripherals/Create');
+        res.redirect('/register/complete');
         console.log(savedUser);
     } catch (error) {
         const errormssg = 'User already exists.'

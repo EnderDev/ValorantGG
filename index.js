@@ -5,10 +5,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const Registration = require('./Auth/Registration');
 const Login = require('./Auth/Login');
-const CreatePeripherals = require('./UserPeripherals/Create');
+const CompleteSignup = require('./CompleteSignup/Create');
 const ViewPlayer = require('./View/Player');
 const ejs = require('ejs');
-const dashboard = require('./dashboard');
 
 // Middleware 
 app.use(express.json());
@@ -22,9 +21,8 @@ mongoose.connect('mongodb://localhost/ValorantStats')
 // Routes 
 app.use('/Register', Registration);
 app.use('/Login', Login);
-app.use('/Peripherals/Create', CreatePeripherals);
+app.use('/register/complete', CompleteSignup);
 app.use('/player', ViewPlayer);
-app.use('/dashboard', dashboard);
 
 // Run the server
 app.listen('3000', () => {
