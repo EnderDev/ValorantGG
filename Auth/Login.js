@@ -12,7 +12,11 @@ router.post('/', async(req, res) => {
     if(!validPassword) res.json('Invalid Password.');
     const token = jwt.sign({_id: user._id}, 'SECRETTTTTT');
     res.cookie('session', token);
-    res.json('Logged In Successfully.');
+    res.redirect('/settings');
+});
+
+router.get('/', (req, res) => {
+    res.render('Login');
 })
 
 module.exports = router;

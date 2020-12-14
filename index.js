@@ -9,7 +9,8 @@ const CompleteSignup = require('./CompleteSignup/Create');
 const ejs = require('ejs');
 const changeKeyboard = require('./Dashboard/ChangeKeyboard');
 const settings = require('./Dashboard/settings');
-
+const ViewPlayer = require('./ViewPlayer/View');
+const logout = require('./Auth/Logout');
 
 // Middleware 
 app.use(express.json());
@@ -26,9 +27,11 @@ app.use('/Login', Login);
 app.use('/register/complete', CompleteSignup);
 app.use('/changeKeyboard', changeKeyboard);
 app.use('/settings', settings);
+app.use('/', ViewPlayer)
+app.use('/logout', logout);
 
 
 // Run the server
-app.listen('3000', () => {
-console.log('Server started running port 3000');
+app.listen('1337', () => {
+console.log('Server started running port 1337');
 })

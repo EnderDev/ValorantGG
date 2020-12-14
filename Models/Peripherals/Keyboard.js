@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const KeyboardSchema = new mongoose.Schema({
     UserID:{
+        unique: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },

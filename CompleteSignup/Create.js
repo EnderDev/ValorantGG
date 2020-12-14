@@ -12,7 +12,7 @@ router.get('/', async(req, res) => {
     });
     try {
         const newKeyboard = await keyboard.save();
-        res.json(newKeyboard);
+        res.redirect('/settings');
     } catch (error) {
         console.log(error);
         res.json(error);
