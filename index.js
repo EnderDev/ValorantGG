@@ -7,6 +7,9 @@ const Registration = require('./Auth/Registration');
 const Login = require('./Auth/Login');
 const CompleteSignup = require('./CompleteSignup/Create');
 const ejs = require('ejs');
+const changeKeyboard = require('./Dashboard/ChangeKeyboard');
+const settings = require('./Dashboard/settings');
+
 
 // Middleware 
 app.use(express.json());
@@ -21,6 +24,8 @@ mongoose.connect('mongodb://localhost/ValorantStats')
 app.use('/Register', Registration);
 app.use('/Login', Login);
 app.use('/register/complete', CompleteSignup);
+app.use('/changeKeyboard', changeKeyboard);
+app.use('/settings', settings);
 
 
 // Run the server
