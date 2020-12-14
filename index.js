@@ -11,6 +11,7 @@ const changeKeyboard = require('./Dashboard/ChangeKeyboard');
 const settings = require('./Dashboard/settings');
 const ViewPlayer = require('./ViewPlayer/View');
 const logout = require('./Auth/Logout');
+const changeHeadset = require('./Dashboard/ChangeHeadset');
 
 // Middleware 
 app.use(express.json());
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/ValorantStats')
+mongoose.set('useFindAndModify', false);
 
 // Routes 
 app.use('/Register', Registration);
@@ -29,6 +31,7 @@ app.use('/changeKeyboard', changeKeyboard);
 app.use('/settings', settings);
 app.use('/', ViewPlayer)
 app.use('/logout', logout);
+app.use('/changeHeadset', changeHeadset);
 
 
 // Run the server

@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const KeyboardSchema = new mongoose.Schema({
+const HeadsetSchema = new mongoose.Schema({
     UserID:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+        ref:'user',
         required: true
     },
-    Keyboard:{
+    Headset:{
         type: String,
         required: true
     }
 });
 
-module.exports = mongoose.model('Keyboard', KeyboardSchema);
+module.exports = mongoose.model('Headset', HeadsetSchema);
