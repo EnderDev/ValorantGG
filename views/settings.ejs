@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= username %></title>
 </head>
 <body>
     <center>
+        <h1><%= username %></h1>
+        <br>
         <form action="/changeKeyboard" method="POST">
         <input type="text" for="Keyboard" name="Keyboard" placeholder="<%= userKeyboard.Keyboard %>">
         <button type="submit">Change</button>
@@ -15,6 +17,16 @@
         <form action="/changeHeadset" method="POST">
         <input type="text" for="Headset" name="Headset" placeholder="<%= userHeadset.Headset %>">
         <button type="Submit">Change</button>
+        </form>
+        <br>
+        <form action="/changeMouse" method="POST">
+        <input type="text" for="Mouse" name="Mouse" placeholder="<%= userMouse.Mouse %>">
+        <button type="Submit">Change</button>
+        </form>
+        <br>
+        <form action="/changeMonitor" method="POST">
+        <input type="text" for="Monitor" name="Monitor" placeholder="<%= userMonitor.Monitor %>">
+        <button type="submit">Change</button>
         </form>
     </center>
 </body>

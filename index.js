@@ -12,6 +12,8 @@ const settings = require('./Dashboard/settings');
 const ViewPlayer = require('./ViewPlayer/View');
 const logout = require('./Auth/Logout');
 const changeHeadset = require('./Dashboard/ChangeHeadset');
+const changeMouse = require('./Dashboard/changeMouse');
+const changeMonitor = require('./Dashboard/changeMonitor');
 
 // Middleware 
 app.use(express.json());
@@ -32,7 +34,8 @@ app.use('/settings', settings);
 app.use('/', ViewPlayer)
 app.use('/logout', logout);
 app.use('/changeHeadset', changeHeadset);
-
+app.use('/changeMouse', changeMouse);
+app.use('/changeMonitor', changeMonitor)
 
 // Run the server
 app.listen('1337', () => {
