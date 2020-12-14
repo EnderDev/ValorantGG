@@ -5,6 +5,10 @@ const Headset = require('../Models/Peripherals/Headset');
 const Mouse = require('../Models/Peripherals/Mouse');
 const monitor = require('../Models/Peripherals/Monitor');
 const Monitor = require('../Models/Peripherals/Monitor');
+const DisplayMode = require('../Models/VideoSettings/DisplayMode');
+const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
+const Resolution = require('../Models/VideoSettings/Resolution');
+
 
 router.get('/', async(req, res) => {
     const token = jwt_decode(req.cookies.session);
@@ -26,12 +30,28 @@ router.get('/', async(req, res) => {
         UserID: PlayerID,
         Monitor: "Default Monitor."
     });
+    const displaymode = new DisplayMode({
+        UserID: PlayerID,
+        DisplayMode: "Full-Screen"
+    });
+    const frameratelimit = new FrameRateLimit({
+        UserID: PlayerID,
+        FrameRateLimit:"60"
+    });
+    const resolution = new Resolution({
+        UserID: PlayerID,
+        Resolution:"1920 x 1080"
+    })
 
     try {
         const newHeadset = await headset.save();
         const newKeyboard = await keyboard.save();
         const newMouse = await mouse.save();
         const newMonitor = await monitor.save();
+        const newDisplayMode = await displaymode.save();
+        const newFrameRateLimit = new frameratelimit.save();
+        const newResolution = new resolution.save();
+
         res.redirect('/settings');
     } catch (error) {
         console.log(error);

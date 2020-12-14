@@ -14,6 +14,10 @@ const logout = require('./Auth/Logout');
 const changeHeadset = require('./Dashboard/ChangeHeadset');
 const changeMouse = require('./Dashboard/changeMouse');
 const changeMonitor = require('./Dashboard/changeMonitor');
+const changeDisplayMode = require('./Dashboard/changeDisplayMode');
+const changeFrameRateLimit = require('./Dashboard/changeFrameRateLimit');
+const changeResolution = require('./Dashboard/changeResolution');
+
 
 // Middleware 
 app.use(express.json());
@@ -37,7 +41,9 @@ app.use('/logout', logout);
 app.use('/changeHeadset', changeHeadset);
 app.use('/changeMouse', changeMouse);
 app.use('/changeMonitor', changeMonitor);
-
+app.use('/changeDisplayMode', changeDisplayMode);
+app.use('/changeFrameRateLimit', changeFrameRateLimit);
+app.use('/changeResolution', changeResolution);
 
 // Run the server
 app.listen('1337', () => {

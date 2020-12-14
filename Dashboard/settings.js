@@ -6,6 +6,10 @@ const jwt_Decode = require('jwt-decode');
 const Headset = require('../Models/Peripherals/Headset');
 const Mouse = require('../Models/Peripherals/Mouse');
 const Monitor = require('../Models/Peripherals/Monitor');
+const DisplayMode = require('../Models/VideoSettings/DisplayMode');
+const Resolution = require('../Models/VideoSettings/Resolution');
+const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
+ 
 
 router.get('/', async(req, res) => {
     const token = req.cookies.session;
@@ -19,13 +23,19 @@ router.get('/', async(req, res) => {
     const userHeadset = await Headset.findOne({UserID: PlayerID});
     const userMouse = await Mouse.findOne({UserID: PlayerID});
     const userMonitor = await Monitor.findOne({UserID: PlayerID});
-    
+    const userDisplayMode = await DisplayMode.findOne({UserID: PlayerID});
+    const userResolution = await Resolution.findOne({UserID: PlayerID});
+    const userFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
+
     res.render('settings', {
         username:username,
         userMonitor: userMonitor,
         userMouse: userMouse,
         userHeadset: userHeadset,
-        userKeyboard: userKeyboard
+        userKeyboard: userKeyboard,
+        userDisplayMode:userDisplayMode,
+        userResolution:userResolution,
+        userFrameRateLimit: userFrameRateLimit
     });
 })
 

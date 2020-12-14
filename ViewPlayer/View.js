@@ -6,6 +6,10 @@ const jwt_Decode = require('jwt-decode');
 const Headset = require('../Models/Peripherals/Headset');
 const Mouse = require('../Models/Peripherals/Mouse');
 const Monitor = require('../Models/Peripherals/Monitor');
+const DisplayMode = require('../Models/VideoSettings/DisplayMode');
+const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
+const Resolution = require('../Models/VideoSettings/Resolution');
+
 
 router.get('/view/:id', async(req, res) => {
     const PlayerName = req.params.id;
@@ -16,12 +20,19 @@ router.get('/view/:id', async(req, res) => {
     const PlayerHeadset = await Headset.findOne({UserID: PlayerID});
     const PlayerMouse = await Mouse.findOne({UserID: PlayerID});
     const PlayerMonitor = await Monitor.findOne({UserID: PlayerID});
+    const PlayerDisplayMode = await DisplayMode.findOne({UserID: PlayerID});
+    const PlayerFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
+    const PlayerResolution = await Resolution.findOne({UserID: PlayerID});
+
     res.render('viewUser', {
         PlayerName: PlayerName,
         PlayerKeyboard: PlayerKeyboard,
         PlayerHeadset: PlayerHeadset,
         PlayerMouse: PlayerMouse,
-        PlayerMonitor: PlayerMonitor
+        PlayerMonitor: PlayerMonitor,
+        PlayerDisplayMode: PlayerDisplayMode,
+        PlayerFrameRateLimit: PlayerFrameRateLimit,
+        PlayerResolution: PlayerResolution
     });
 })
 
