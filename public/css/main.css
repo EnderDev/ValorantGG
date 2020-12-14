@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+
+* {
+    font-family: 'Inter', sans-serif;  
+}
+
+.card {
+    border:none;
+    border-radius:15px !important;
+}
+.card {
+    display: inline-block;
+    margin:0.5rem;
+}
+
+.marginDown {
+    margin-top:0.45rem;
+}
+
+h2{ 
+    font-weight:bolder;
+}

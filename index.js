@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/ValorantStats')
@@ -35,7 +36,8 @@ app.use('/', ViewPlayer)
 app.use('/logout', logout);
 app.use('/changeHeadset', changeHeadset);
 app.use('/changeMouse', changeMouse);
-app.use('/changeMonitor', changeMonitor)
+app.use('/changeMonitor', changeMonitor);
+
 
 // Run the server
 app.listen('1337', () => {
