@@ -22,3 +22,16 @@ h2{
     font-weight:bolder;
     color:#212529;
 }
+.card-title {
+    font-size:1.75rem;
+}
+
+.changeKb {
+    border:none;
+    background-color:transparent;
+    text-align: center;
+    color:white;
+}
+.changeKb:active {
+    border: none;
+}

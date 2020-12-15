@@ -23,7 +23,6 @@ router.get('/view/:id', async(req, res) => {
     const PlayerDisplayMode = await DisplayMode.findOne({UserID: PlayerID});
     const PlayerFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
     const PlayerResolution = await Resolution.findOne({UserID: PlayerID});
-
     res.render('viewUser', {
         PlayerName: PlayerName,
         PlayerKeyboard: PlayerKeyboard,

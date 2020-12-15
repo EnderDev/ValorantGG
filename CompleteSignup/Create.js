@@ -49,8 +49,8 @@ router.get('/', async(req, res) => {
         const newMouse = await mouse.save();
         const newMonitor = await monitor.save();
         const newDisplayMode = await displaymode.save();
-        const newFrameRateLimit = new frameratelimit.save();
-        const newResolution = new resolution.save();
+        const newFrameRateLimit = await frameratelimit.save();
+        const newResolution = await resolution.save();
 
         res.redirect('/settings');
     } catch (error) {

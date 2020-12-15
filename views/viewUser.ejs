@@ -12,7 +12,8 @@
         <br>
         <div class="card rounded shadow text-white bg-dark " style="border-radius:50px; width: 18rem;">
             <div class="card-body">
-              <h4 class="card-title marginDown"><%= PlayerName %>'s Profile</h4>
+              <h4 class="card-title marginDown"><%= PlayerName %></h4>
+              <p class="card-body">Been playing video games since i was 10, now i'm PRO @ Valorant.</p>
             </div>
           </div>
           <br><br><br>
@@ -43,6 +44,29 @@
             <div class="card-body">
               <h5 class="card-title">Monitor</h5>
               <p class="card-text"><%= PlayerMonitor.Monitor %></p>
+            </div>
+          </div>
+          <br><br><br>
+          <h2>Video Settings</h2>
+          <br>
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Display Mode</h5>
+              <p class="card-text"><%= PlayerDisplayMode.DisplayMode %></p>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Frame Rate Limit</h5>
+              <p class="card-text"><%= PlayerFrameRateLimit.FrameRateLimit %></p>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Resolution</h5>
+              <p class="card-text"><%= PlayerResolution.Resolution %></p>
             </div>
           </div>
     </center>

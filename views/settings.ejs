@@ -3,31 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
     <title><%= username %></title>
 </head>
 <body>
     <center>
-        <h1><%= username %></h1>
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= username %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+<body>
+    <center>
         <br>
-        <form action="/changeKeyboard" method="POST">
-        <input type="text" for="Keyboard" name="Keyboard" placeholder="<%= userKeyboard.Keyboard %>">
-        <button type="submit">Change</button>
-        </form>
-        <br>
-        <form action="/changeHeadset" method="POST">
-        <input type="text" for="Headset" name="Headset" placeholder="<%= userHeadset.Headset %>">
-        <button type="Submit">Change</button>
-        </form>
-        <br>
-        <form action="/changeMouse" method="POST">
-        <input type="text" for="Mouse" name="Mouse" placeholder="<%= userMouse.Mouse %>">
-        <button type="Submit">Change</button>
-        </form>
-        <br>
-        <form action="/changeMonitor" method="POST">
-        <input type="text" for="Monitor" name="Monitor" placeholder="<%= userMonitor.Monitor %>">
-        <button type="submit">Change</button>
-        </form>
+        <div class="card rounded shadow text-white bg-dark " style="border-radius:50px; width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title marginDown">Edit Profile</h4>
+            </div>
+          </div>
+          <br><br><br>
+          <h2>Peripherals</h2>
+          <br>
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Keyboard</h5>
+                <form action="/changeKeyboard" method="POST">
+                    <input type="text" for="Keyboard" name="Keyboard" placeholder="<%= userKeyboard.Keyboard %>" class="changeKb" required>
+                    <br><br>
+                    <button class="btn btn-success" type="submit">Change</button>
+                    </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Headset</h5>
+              <form action="/changeHeadset" method="POST">
+                <input type="text" for="Headset" name="Headset" placeholder="<%= userHeadset.Headset %>" class="changeKb" required>
+                <br><br>
+                <button class="btn btn-success" type="Submit">Change</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Mouse</h5>
+              <form action="/changeMouse" method="POST">
+              <input type="text" for="Mouse" name="Mouse" placeholder="<%= userMouse.Mouse %>" class="changeKb" required>
+              <br><br>
+              <button class="btn btn-success" type="Submit">Change</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Monitor</h5>
+              <form action="/changeMonitor" method="POST">
+              <input type="text" for="Monitor" name="Monitor" placeholder="<%= userMonitor.Monitor %>" class="changeKb" required>
+                <br><br>
+                <button type="submit" class="btn btn-success">Change</button>
+            </form>
+            </div>
+          </div>
+          <br><br><br>
+          <h2>Video Settings</h2>
+          <br>
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Display Mode</h5>
+              <form action="/changeDisplayMode" method="POST">
+                <input class="changeKb" type="text" for="DisplayMode" name="DisplayMode" placeholder="<%= userDisplayMode.DisplayMode %>" required>
+                <br><br>
+                <button class="btn btn-success" type="submit">Change</button>
+                </form>
+              <p class="card-text"></p>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Frame Rate Limit</h5>
+              <form action="/changeFrameRateLimit" method="POST">
+                <input type="text" class="changeKb" for="FrameRateLimit" name="FrameRateLimit" placeholder="<%= userFrameRateLimit.FrameRateLimit %>" required>
+                <br><br>
+                <button class="btn btn-success" type="submit">Change</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Resolution</h5>
+              <form action="/changeResolution" method="POST">
+                <input type="text" for="Resolution" class="changeKb" name="Resolution" placeholder="<%= userResolution.Resolution %>" required>
+                <br><br>
+                <button type="submit" class="btn btn-success">Change</button>
+                </form>
+            </div>
+          </div>
+    </center>
+</body>
+</html>
     </center>
 </body>
 </html>

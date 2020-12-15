@@ -17,7 +17,7 @@ const changeMonitor = require('./Dashboard/changeMonitor');
 const changeDisplayMode = require('./Dashboard/changeDisplayMode');
 const changeFrameRateLimit = require('./Dashboard/changeFrameRateLimit');
 const changeResolution = require('./Dashboard/changeResolution');
-
+const test = require('./Dashboard/Image');
 
 // Middleware 
 app.use(express.json());
@@ -44,6 +44,7 @@ app.use('/changeMonitor', changeMonitor);
 app.use('/changeDisplayMode', changeDisplayMode);
 app.use('/changeFrameRateLimit', changeFrameRateLimit);
 app.use('/changeResolution', changeResolution);
+app.use('/testing', test);
 
 // Run the server
 app.listen('1337', () => {
