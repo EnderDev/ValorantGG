@@ -11,6 +11,7 @@ const Resolution = require('../Models/VideoSettings/Resolution');
 const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Bio = require('../Models/Bio'); 
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
+const requestIp = require('request-ip');
 
 router.get('/', async(req, res) => {
     const token = req.cookies.session;

@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../Models/User');
 const cookieParser = require('cookie-parser');
+const RequestIp = require('@supercharge/request-ip');
 
 router.post('/', async(req, res) => {
     const user = await User.findOne({Username: req.body.Username});

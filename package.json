@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "@supercharge/request-ip": "^1.1.2",
     "animate.css": "^4.1.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
@@ -16,6 +17,7 @@
     "images-scraper": "^5.0.7",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
-    "mongoose": "^5.11.7"
+    "mongoose": "^5.11.7",
+    "request-ip": "^2.1.3"
   }
 }

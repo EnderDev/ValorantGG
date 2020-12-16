@@ -55,3 +55,7 @@ body {
 .fa-check-square {
     color:green
 }
+.bi-patch-check {
+    color:#00FF00;
+    margin-top: -5px;
+}
