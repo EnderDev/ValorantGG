@@ -22,8 +22,9 @@
         <br>
         <div class="card rounded shadow text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="border-radius:50px; width: 18rem;">
             <div class="card-body">
-              <h4 class="card-title marginDown"><%= PlayerName %> <% if (PlayerID.isVerified) { %> 
+              <h4 class="card-title marginDown"><%= PlayerName %> <% if (PlayerCollection.isVerified == true )  { %> 
                 <i class="fas fa-check"></i>
+                <h1> Hello </h1>
                 <% } %>
               </h4>
               <p class="card-body"><%= PlayerBio.Bio %></p>

@@ -26,6 +26,7 @@ router.get('/view/:id', async(req, res) => {
     const PlayerResolution = await Resolution.findOne({UserID: PlayerID});
     const PlayerBio = await Bio.findOne({UserID: PlayerID});
     const playerAspectRatio = await AspectRatio.findOne({UserID: PlayerID});
+    console.log(PlayerCollection);
 
     res.render('viewUser', {
         PlayerID: PlayerID,
@@ -38,7 +39,8 @@ router.get('/view/:id', async(req, res) => {
         PlayerFrameRateLimit: PlayerFrameRateLimit,
         PlayerResolution: PlayerResolution,
         PlayerBio:PlayerBio,
-        PlayerAspectRatio: playerAspectRatio
+        PlayerAspectRatio: playerAspectRatio,
+        PlayerCollection: PlayerCollection
     });
 })
 
