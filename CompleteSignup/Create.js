@@ -9,7 +9,7 @@ const DisplayMode = require('../Models/VideoSettings/DisplayMode');
 const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Resolution = require('../Models/VideoSettings/Resolution');
 const Bio = require('../Models/Bio');
-
+const AspectRatio = require('../Models/VideoSettings/AspectRatio');
 
 router.get('/', async(req, res) => {
     const token = jwt_decode(req.cookies.session);
@@ -46,7 +46,11 @@ router.get('/', async(req, res) => {
     const resolution = new Resolution({
         UserID: PlayerID,
         Resolution:"1920 x 1080"
-    })
+    });
+    const aspectratio = new AspectRatio({
+        UserID:PlayerID,
+        AspectRatio: "Letterbox"
+    });
 
     try {
         const newHeadset = await headset.save();
@@ -57,6 +61,7 @@ router.get('/', async(req, res) => {
         const newFrameRateLimit = await frameratelimit.save();
         const newResolution = await resolution.save();
         const newBio = await bio.save();
+        const newAspectRatio = await aspectratio.save();
         res.redirect('/settings');
     } catch (error) {
         console.log(error);

@@ -48,3 +48,10 @@ h2{
 body {
     background-color:#17181A;
 }
+.fa-check {
+    color:green;
+    font-size:1.5rem;
+}
+.fa-check-square {
+    color:green
+}

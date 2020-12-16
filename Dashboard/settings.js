@@ -10,6 +10,7 @@ const DisplayMode = require('../Models/VideoSettings/DisplayMode');
 const Resolution = require('../Models/VideoSettings/Resolution');
 const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Bio = require('../Models/Bio'); 
+const AspectRatio = require('../Models/VideoSettings/AspectRatio');
 
 router.get('/', async(req, res) => {
     const token = req.cookies.session;
@@ -27,6 +28,7 @@ router.get('/', async(req, res) => {
     const userResolution = await Resolution.findOne({UserID: PlayerID});
     const userFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
     const userBio = await Bio.findOne({UserID: PlayerID});
+    const userAspectRatio = await AspectRatio.findOne({UserID: PlayerID});
 
     res.render('settings', {
         username:username,
@@ -37,7 +39,8 @@ router.get('/', async(req, res) => {
         userDisplayMode:userDisplayMode,
         userResolution:userResolution,
         userFrameRateLimit: userFrameRateLimit,
-        userBio: userBio
+        userBio: userBio,
+        userAspectRatio : userAspectRatio
     });
 })
 

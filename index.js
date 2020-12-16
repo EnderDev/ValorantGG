@@ -19,6 +19,7 @@ const changeFrameRateLimit = require('./Dashboard/changeFrameRateLimit');
 const changeResolution = require('./Dashboard/changeResolution');
 const test = require('./Dashboard/Image');
 const changeBio = require('./Dashboard/changeBio');
+const changeAspectRatio = require('./Dashboard/changeAspectRatio');
 
 // Middleware 
 app.use(express.json());
@@ -47,6 +48,7 @@ app.use('/changeFrameRateLimit', changeFrameRateLimit);
 app.use('/changeResolution', changeResolution);
 app.use('/testing', test);
 app.use('/changeBio', changeBio);
+app.use('/changeAspectRatio', changeAspectRatio);
 
 // Run the server
 app.listen('1337', () => {

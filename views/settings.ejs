@@ -7,80 +7,81 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
 <body>
     <center>
         <br>
-        <div class="card rounded shadow text-white bg-dark " style="border-radius:50px; width: 18rem;">
+        <div class="card rounded shadow text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="border-radius:50px; width: 18rem;">
             <div class="card-body">
               <h4 class="card-title marginDown"><%= username %>'s settings</h4>
               <br>
               <form action="/changeBio" method="POST">
-              <input type="text" for="Bio" name="Bio" class="changeKb" required placeholder="<%= userBio.Bio %>">
+              <input type="text" for="Bio" name="Bio" class="changeKb animate__animated animate__fadeInDown animate__fadeIn" required placeholder="<%= userBio.Bio %>">
               <br><br>
               <button class="btn-hover color-11" type="submit">Change</button>
               </form>
             </div>
           </div>
           <br><br><br>
-          <h2>Peripherals</h2>
+          <h2 class="animate__animated animate__fadeInDown animate__fadeIn">Peripherals</h2>
           <br>
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-                <h5 class="card-title">Keyboard</h5>
+                <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Keyboard</h5>
                 <br>
                 <form action="/changeKeyboard" method="POST">
                     <input type="text" for="Keyboard" name="Keyboard" placeholder="<%= userKeyboard.Keyboard %>" class="changeKb" required>
                     <br><br>
-                    <button class="btn-hover color-11" type="submit">Change</button>
+                    <button class="btn-hover color-11 animate__animated animate__fadeInDown animate__fadeIn" type="submit">Change</button>
                     </form>
             </div>
           </div>
 
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Headset</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Headset</h5>
               <br>
               <form action="/changeHeadset" method="POST">
-                <input type="text" for="Headset" name="Headset" placeholder="<%= userHeadset.Headset %>" class="changeKb" required>
+                <input type="text" for="Headset" name="Headset" placeholder="<%= userHeadset.Headset %>" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" required>
                 <br><br>
-                <button class="btn-hover color-11" type="Submit">Change</button>
+                <button class="btn-hover color-11 animate__animated animate__fadeInDown animate__fadeIn" type="Submit">Change</button>
                 </form>
             </div>
           </div>
 
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn " style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Mouse</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Mouse</h5>
               <br>
               <form action="/changeMouse" method="POST">
-              <input type="text" for="Mouse" name="Mouse" placeholder="<%= userMouse.Mouse %>" class="changeKb" required>
+              <input type="text" for="Mouse" name="Mouse" placeholder="<%= userMouse.Mouse %>" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" required>
               <br><br>
-              <button class="btn-hover color-11" type="Submit">Change</button>
+              <button class="btn-hover color-11 animate__animated animate__fadeInDown animate__fadeIn" type="Submit">Change</button>
               </form>
             </div>
           </div>
 
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Monitor</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Monitor</h5>
               <br>
               <form action="/changeMonitor" method="POST">
-              <input type="text" for="Monitor" name="Monitor" placeholder="<%= userMonitor.Monitor %>" class="changeKb" required>
+              <input type="text" for="Monitor" name="Monitor" placeholder="<%= userMonitor.Monitor %>" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" required>
                 <br><br>
-                <button type="submit" class="btn-hover color-11">Change</button>
+                <button type="submit" class="animate__animated animate__fadeInDown animate__fadeIn btn-hover color-11">Change</button>
             </form>
             </div>
           </div>
           <br><br><br>
-          <h2>Video Settings</h2>
+          <h2 class="animate__animated animate__fadeInDown animate__fadeIn">Video Settings</h2>
           <br>
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Display Mode</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Display Mode</h5>
               <br>
               <form action="/changeDisplayMode" method="POST">
-                <input class="changeKb" type="text" for="DisplayMode" name="DisplayMode" placeholder="<%= userDisplayMode.DisplayMode %>" required>
+                <input class="changeKb animate__animated animate__fadeInDown animate__fadeIn" type="text" for="DisplayMode" name="DisplayMode" placeholder="<%= userDisplayMode.DisplayMode %>" required>
                 <br><br>
                 <button class="btn-hover color-11" type="submit">Change</button>
                 </form>
@@ -88,29 +89,42 @@
             </div>
           </div>
 
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Frame Rate Limit</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Frame Rate Limit</h5>
               <br>
               <form action="/changeFrameRateLimit" method="POST">
-                <input type="text" class="changeKb" for="FrameRateLimit" name="FrameRateLimit" placeholder="<%= userFrameRateLimit.FrameRateLimit %>" required>
+                <input type="text" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" for="FrameRateLimit" name="FrameRateLimit" placeholder="<%= userFrameRateLimit.FrameRateLimit %>" required>
                 <br><br>
                 <button class="btn-hover color-11" type="submit">Change</button>
                 </form>
             </div>
           </div>
 
-          <div class="card shadow rounded-3 text-white bg-dark " style="width: 20rem;">
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title">Resolution</h5>
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Resolution</h5>
               <br>
               <form action="/changeResolution" method="POST">
-                <input type="text" for="Resolution" class="changeKb" name="Resolution" placeholder="<%= userResolution.Resolution %>" required>
+                <input type="text" for="Resolution" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" name="Resolution" placeholder="<%= userResolution.Resolution %>" required>
                 <br><br>
-                <button type="submit" class="btn-hover color-11">Change</button>
+                <button type="submit" class="btn-hover color-11 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
                 </form>
             </div>
           </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Aspect Ratio</h5>
+              <br>
+              <form action="/changeAspectRatio" method="POST">
+                <input type="text" for="AspectRatio" class="animate__animated animate__fadeInDown animate__fadeIn changeKb" name="AspectRatio" placeholder="<%= userAspectRatio.AspectRatio %>" required>
+                <br><br>
+                <button type="submit" class="btn-hover color-11 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
+                </form>
+            </div>
+          </div>
+
     </center>
     <br><br><br><br>
 
