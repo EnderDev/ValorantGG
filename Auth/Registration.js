@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 
 router.post('/', async(req, res) => {
     const gen = await bcrypt.genSalt(10);
+    console.log(gen);
     const hashedPassword = await bcrypt.hash(req.body.Password, gen);
     const user = new User({
         Username: req.body.Username,

@@ -8,12 +8,17 @@ const Monitor = require('../Models/Peripherals/Monitor');
 const DisplayMode = require('../Models/VideoSettings/DisplayMode');
 const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Resolution = require('../Models/VideoSettings/Resolution');
+const Bio = require('../Models/Bio');
 
 
 router.get('/', async(req, res) => {
     const token = jwt_decode(req.cookies.session);
     console.log(token);
     const PlayerID = token._id
+    const bio = new Bio({
+        UserID: PlayerID,
+        Bio:"Edit your bio now!"
+    })
     const keyboard = new Keyboard({
         UserID: PlayerID,
         Keyboard: "Default Keyboard."
@@ -51,7 +56,7 @@ router.get('/', async(req, res) => {
         const newDisplayMode = await displaymode.save();
         const newFrameRateLimit = await frameratelimit.save();
         const newResolution = await resolution.save();
-
+        const newBio = await bio.save();
         res.redirect('/settings');
     } catch (error) {
         console.log(error);

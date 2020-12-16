@@ -9,7 +9,7 @@ const Monitor = require('../Models/Peripherals/Monitor');
 const DisplayMode = require('../Models/VideoSettings/DisplayMode');
 const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Resolution = require('../Models/VideoSettings/Resolution');
-
+const Bio = require('../Models/Bio');
 
 router.get('/view/:id', async(req, res) => {
     const PlayerName = req.params.id;
@@ -23,6 +23,7 @@ router.get('/view/:id', async(req, res) => {
     const PlayerDisplayMode = await DisplayMode.findOne({UserID: PlayerID});
     const PlayerFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
     const PlayerResolution = await Resolution.findOne({UserID: PlayerID});
+    const PlayerBio = await Bio.findOne({UserID: PlayerID});
     res.render('viewUser', {
         PlayerName: PlayerName,
         PlayerKeyboard: PlayerKeyboard,
@@ -31,7 +32,8 @@ router.get('/view/:id', async(req, res) => {
         PlayerMonitor: PlayerMonitor,
         PlayerDisplayMode: PlayerDisplayMode,
         PlayerFrameRateLimit: PlayerFrameRateLimit,
-        PlayerResolution: PlayerResolution
+        PlayerResolution: PlayerResolution,
+        PlayerBio:PlayerBio
     });
 })
 

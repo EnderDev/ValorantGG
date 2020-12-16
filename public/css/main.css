@@ -20,7 +20,7 @@
 
 h2{ 
     font-weight:bolder;
-    color:#212529;
+    color:#FFFFFF;
 }
 .card-title {
     font-size:1.75rem;
@@ -34,4 +34,17 @@ h2{
 }
 .changeKb:active {
     border: none;
+    background-color:none;
+}
+.changeKb::after {
+    border:none;
+    border-radius: 0px;
+    background-color: none;
+}
+
+.card {
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+body {
+    background-color:#17181A;
 }
