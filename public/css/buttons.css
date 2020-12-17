@@ -28,6 +28,11 @@
     transition: all .4s ease-in-out;
 }
 
+.navbar-button {
+    width:200px !important;
+    height:50px !important;
+}
+
 .btn-hover:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;

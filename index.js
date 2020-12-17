@@ -20,6 +20,7 @@ const changeResolution = require('./Dashboard/changeResolution');
 const test = require('./Dashboard/Image');
 const changeBio = require('./Dashboard/changeBio');
 const changeAspectRatio = require('./Dashboard/changeAspectRatio');
+const changeColor = require('./Dashboard/changeColor');
 
 // Middleware 
 app.use(express.json());
@@ -49,6 +50,7 @@ app.use('/changeResolution', changeResolution);
 app.use('/testing', test);
 app.use('/changeBio', changeBio);
 app.use('/changeAspectRatio', changeAspectRatio);
+app.use('/changeColor', changeColor);
 
 // Run the server
 app.listen('1337', () => {

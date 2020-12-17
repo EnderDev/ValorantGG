@@ -11,6 +11,7 @@ const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Resolution = require('../Models/VideoSettings/Resolution');
 const Bio = require('../Models/Bio');
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
+const Color = require('../Models/Crosshair/Color');
 
 router.get('/view/:id', async(req, res) => {
     const PlayerName = req.params.id;
@@ -26,6 +27,7 @@ router.get('/view/:id', async(req, res) => {
     const PlayerResolution = await Resolution.findOne({UserID: PlayerID});
     const PlayerBio = await Bio.findOne({UserID: PlayerID});
     const playerAspectRatio = await AspectRatio.findOne({UserID: PlayerID});
+    const PlayerColor = await Color.findOne({UserID: PlayerID});
     console.log(PlayerCollection);
 
     res.render('viewUser', {
@@ -40,7 +42,8 @@ router.get('/view/:id', async(req, res) => {
         PlayerResolution: PlayerResolution,
         PlayerBio:PlayerBio,
         PlayerAspectRatio: playerAspectRatio,
-        PlayerCollection: PlayerCollection
+        PlayerCollection: PlayerCollection,
+        PlayerColor: PlayerColor
     });
 })
 

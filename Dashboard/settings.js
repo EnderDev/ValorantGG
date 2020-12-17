@@ -12,6 +12,7 @@ const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Bio = require('../Models/Bio'); 
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
 const requestIp = require('request-ip');
+const Color = require('../Models/Crosshair/Color');
 
 router.get('/', async(req, res) => {
     const token = req.cookies.session;
@@ -30,8 +31,10 @@ router.get('/', async(req, res) => {
     const userFrameRateLimit = await FrameRateLimit.findOne({UserID: PlayerID});
     const userBio = await Bio.findOne({UserID: PlayerID});
     const userAspectRatio = await AspectRatio.findOne({UserID: PlayerID});
-
+    const userColor = await Color.findOne({UserID: PlayerID});
+    console.log(userName);
     res.render('settings', {
+        userCollection: userName,
         username:username,
         userMonitor: userMonitor,
         userMouse: userMouse,
@@ -41,7 +44,8 @@ router.get('/', async(req, res) => {
         userResolution:userResolution,
         userFrameRateLimit: userFrameRateLimit,
         userBio: userBio,
-        userAspectRatio : userAspectRatio
+        userAspectRatio : userAspectRatio,
+        userColor: userColor
     });
 })
 

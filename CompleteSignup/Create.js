@@ -10,6 +10,7 @@ const FrameRateLimit = require('../Models/VideoSettings/FrameRateLimit');
 const Resolution = require('../Models/VideoSettings/Resolution');
 const Bio = require('../Models/Bio');
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
+const Color = require('../Models/Crosshair/Color');
 
 router.get('/', async(req, res) => {
     const token = jwt_decode(req.cookies.session);
@@ -51,6 +52,10 @@ router.get('/', async(req, res) => {
         UserID:PlayerID,
         AspectRatio: "Letterbox"
     });
+    const color = new Color({
+        UserID: PlayerID,
+        Color: "Green"
+    });
 
     try {
         const newHeadset = await headset.save();
@@ -62,6 +67,7 @@ router.get('/', async(req, res) => {
         const newResolution = await resolution.save();
         const newBio = await bio.save();
         const newAspectRatio = await aspectratio.save();
+        const newColor = await color.save();
         res.redirect('/settings');
     } catch (error) {
         console.log(error);
