@@ -11,6 +11,9 @@ const Resolution = require('../Models/VideoSettings/Resolution');
 const Bio = require('../Models/Bio');
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
 const Color = require('../Models/Crosshair/Color');
+const Outlines = require('../Models/Crosshair/Outlines');
+const InnerLines = require('../Models/Crosshair/InnerLines');
+const OuterLines = require('../Models/Crosshair/OuterLines');
 
 router.get('/', async(req, res) => {
     const token = jwt_decode(req.cookies.session);
@@ -56,6 +59,18 @@ router.get('/', async(req, res) => {
         UserID: PlayerID,
         Color: "Green"
     });
+    const outlines = new Outlines({
+        UserID: PlayerID,
+        Outlines: "0/0/0/0"
+    });
+    const innerlines = new InnerLines({
+        UserID: PlayerID,
+        InnerLines:"0/0/0/0"
+    });
+    const outerlines = new OuterLines({
+        UserID: PlayerID,
+        OuterLines: "0/0/0/0"
+    })
 
     try {
         const newHeadset = await headset.save();
@@ -68,6 +83,9 @@ router.get('/', async(req, res) => {
         const newBio = await bio.save();
         const newAspectRatio = await aspectratio.save();
         const newColor = await color.save();
+        const newOutlines = await outlines.save();
+        const newInnerLines = await innerlines.save();
+        const newOuterLines = await outerlines.save();
         res.redirect('/settings');
     } catch (error) {
         console.log(error);

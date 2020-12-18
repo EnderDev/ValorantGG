@@ -146,7 +146,43 @@
               <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Color</h5>
               <br>
               <form action="/changeColor" method="POST">
-                <input type="text" for="Color" class="color animate__animated animate__fadeInDown animate__fadeIn changeKb" name="Color" id="Color" required> 
+                <input type="text" for="Color" class="color animate__animated animate__fadeInDown animate__fadeIn changeKb" name="Color" id="Color" required placeholder="<%= userColor.Color %>"> 
+                <br><br>
+                <button type="submit" class="btn-hover color-3 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Outlines</h5>
+              <br>
+              <form action="/changeOutlines" method="POST">
+                <input type="text" for="Outlines"  maxlength="7" class=" js-date color animate__animated animate__fadeInDown animate__fadeIn changeKb" name="Outlines" id="Outlines" required placeholder="<%= userOutlines.Outlines %>"> 
+                <br><br>
+                <button type="submit" class="btn-hover color-3 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Inner Lines</h5>
+              <br>
+              <form action="/changeInnerLines" method="POST">
+                <input type="text" for="InnerLines"  maxlength="7" class=" js-date2 color animate__animated animate__fadeInDown animate__fadeIn changeKb" name="InnerLines" id="Outlines" required placeholder="<%= userInnerLines.InnerLines %>"> 
+                <br><br>
+                <button type="submit" class="btn-hover color-3 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
+                </form>
+            </div>
+          </div>
+
+          <div class="card shadow rounded-3 text-white bg-dark animate__animated animate__fadeInDown animate__fadeIn" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title animate__animated animate__fadeInDown animate__fadeIn">Outer Lines</h5>
+              <br>
+              <form action="/changeOuterLines" method="POST">
+                <input type="text" for="OuterLines"  maxlength="7" class=" js-date3 color animate__animated animate__fadeInDown animate__fadeIn changeKb" name="OuterLines" id="Outlines" required placeholder="<%= userOuterLines.OuterLines %>"> 
                 <br><br>
                 <button type="submit" class="btn-hover color-3 animate__animated animate__fadeInDown animate__fadeIn">Change</button>
                 </form>
@@ -161,3 +197,114 @@
     </center>
 </body>
 </html>
+<script type="text/javascript">
+var input = document.querySelectorAll('.js-date')[0];
+  
+  var dateInputMask = function dateInputMask(elm) {
+    elm.addEventListener('keypress', function(e) {
+      if(e.keyCode < 47 || e.keyCode > 57) {
+        e.preventDefault();
+      }
+      
+      var len = elm.value.length;
+      
+      // If we're at a particular place, let the user type the slash
+      // i.e., 12/12/1212
+      if(len !== 1 || len !== 3) {
+        if(e.keyCode == 47) {
+          e.preventDefault();
+        }
+      }
+      
+      // If they don't add the slash, do it for them...
+      if(len === 1) {
+        elm.value += '/';
+      }
+  
+      // If they don't add the slash, do it for them...
+      if(len === 3) {
+        elm.value += '/';
+      }
+
+      if(len === 5) {
+        elm.value += '/';
+      }
+    });
+  };
+    
+  dateInputMask(input);
+
+  var input2 = document.querySelectorAll('.js-date2')[0];
+  
+  var doSomething = function dateInputMask(elm) {
+    elm.addEventListener('keypress', function(e) {
+      if(e.keyCode < 47 || e.keyCode > 57) {
+        e.preventDefault();
+      }
+      
+      var len = elm.value.length;
+      
+      // If we're at a particular place, let the user type the slash
+      // i.e., 12/12/1212
+      if(len !== 1 || len !== 3) {
+        if(e.keyCode == 47) {
+          e.preventDefault();
+        }
+      }
+      
+      // If they don't add the slash, do it for them...
+      if(len === 1) {
+        elm.value += '/';
+      }
+  
+      // If they don't add the slash, do it for them...
+      if(len === 3) {
+        elm.value += '/';
+      }
+
+      if(len === 5) {
+        elm.value += '/';
+      }
+    });
+  };
+    
+  doSomething(input2);
+
+  var input3 = document.querySelectorAll('.js-date3')[0];
+  
+  var doSomething2 = function dateInputMask(elm) {
+    elm.addEventListener('keypress', function(e) {
+      if(e.keyCode < 47 || e.keyCode > 57) {
+        e.preventDefault();
+      }
+      
+      var len = elm.value.length;
+      
+      // If we're at a particular place, let the user type the slash
+      // i.e., 12/12/1212
+      if(len !== 1 || len !== 3) {
+        if(e.keyCode == 47) {
+          e.preventDefault();
+        }
+      }
+      
+      // If they don't add the slash, do it for them...
+      if(len === 1) {
+        elm.value += '/';
+      }
+  
+      // If they don't add the slash, do it for them...
+      if(len === 3) {
+        elm.value += '/';
+      }
+
+      if(len === 5) {
+        elm.value += '/';
+      }
+    });
+  };
+    
+  doSomething2(input3);
+
+
+  </script>

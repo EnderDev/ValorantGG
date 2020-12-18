@@ -13,6 +13,9 @@ const Bio = require('../Models/Bio');
 const AspectRatio = require('../Models/VideoSettings/AspectRatio');
 const requestIp = require('request-ip');
 const Color = require('../Models/Crosshair/Color');
+const Outlines = require('../Models/Crosshair/Outlines');
+const InnerLines = require('../Models/Crosshair/InnerLines');
+const OuterLines = require('../Models/Crosshair/OuterLines');
 
 router.get('/', async(req, res) => {
     const token = req.cookies.session;
@@ -32,6 +35,9 @@ router.get('/', async(req, res) => {
     const userBio = await Bio.findOne({UserID: PlayerID});
     const userAspectRatio = await AspectRatio.findOne({UserID: PlayerID});
     const userColor = await Color.findOne({UserID: PlayerID});
+    const userOutlines = await Outlines.findOne({UserID: PlayerID});
+    const userInnerLines = await InnerLines.findOne({UserID: PlayerID});
+    const userOuterLines = await OuterLines.findOne({UserID: PlayerID});
     console.log(userName);
     res.render('settings', {
         userCollection: userName,
@@ -45,7 +51,10 @@ router.get('/', async(req, res) => {
         userFrameRateLimit: userFrameRateLimit,
         userBio: userBio,
         userAspectRatio : userAspectRatio,
-        userColor: userColor
+        userColor: userColor,
+        userOutlines: userOutlines,
+        userInnerLines: userInnerLines,
+        userOuterLines: userOuterLines
     });
 })
 
