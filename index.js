@@ -24,7 +24,7 @@ const changeColor = require('./Dashboard/changeColor');
 const changeOutlines = require('./Dashboard/changeOutlines');
 const changeInnerLines = require('./Dashboard/changeInnerLines');
 const changeOuterLines = require('./Dashboard/changeOuterLines');
-const MainPage = require('./MainPage/index');
+
 
 // Middleware 
 app.use(express.json());
@@ -58,7 +58,6 @@ app.use('/changeColor', changeColor);
 app.use('/changeOutlines', changeOutlines);
 app.use('/changeInnerLines', changeInnerLines);
 app.use('/changeOuterLines', changeOuterLines);
-app.use('/', MainPage);
 
 // Run the server
 app.listen('1337', () => {
